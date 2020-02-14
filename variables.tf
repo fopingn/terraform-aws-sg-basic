@@ -27,14 +27,26 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
-variable "ingress_ports" {
-  type        = list(number)
-  description = "list of ingress ports"
+variable "ingress" {
+  type        = list(map(string))
+  description = "Customizing parameter for ingress block definition"
   default     = []
 }
 
-variable "egress_ports" {
-  type        = list(number)
-  description = "list of egress ports"
+variable "egress" {
+  type        = list(map(string))
+  description = "Customizing parameter for ingress block definition"
+  default     = []
+}
+
+variable "cidr_blocks_ingress" {
+  description = "list of cidr ingress block "
+  type        = list
+  default     = []
+}
+
+variable "cidr_blocks_egress" {
+  description = "list of cidr egress block "
+  type        = list
   default     = []
 }
